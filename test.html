@@ -1,0 +1,106 @@
+#CACHE{0}
+
+
+<?php
+
+/*
+	echo "lol" ;
+
+	$url = "http://vivelasociale.org/les-emissions-recentes/62-radio-france-greve-avril-2015";
+
+	include_spip('inc/distant');
+	$page_distante = recuperer_page($url);
+	
+	//chercher un mp3 avec une url absolue
+	preg_match_all(",http://[a-zA-Z0-9\s()\/\:\._%\?+'=~-]*\.mp3,Uims",$page_distante,$matches,PREG_SET_ORDER);
+	
+	if (count($matches)){
+		echo "wesh";
+		foreach ($matches as $m){
+			// virer ici les faux mp3
+			if(!preg_match(",^http://twitter.com/intent/tweet,",$m[0]))
+				$enclosures[] = $m[0];
+		}
+	}else{ // chercher un lien relatif
+		//chercher un mp3
+		preg_match_all(",(href|src)=(\"|')([a-zA-Z0-9\s()\/\:\._%\?+'=~-]*\.mp3),Uims",$page_distante,$matches,PREG_SET_ORDER);
+
+		foreach ($matches as $m){
+
+			$parse_url = parse_url($url);
+		
+			// virer ici les faux mp3
+			if(!preg_match(",^http://twitter.com/intent/tweet,",$m[3]))
+				$enclosures[] = "http://" . $parse_url['host'] . $m[3];
+		}
+		
+
+	}
+
+	$enclosures = array_unique($enclosures);
+
+	var_dump($enclosures);
+
+
+*/
+
+
+
+/*
+	//include_spip("podcast_pipelines");
+	echo "<pre>";	
+
+	//radiobot_scan('http://seenthis.net/messages/230693' ,'LOL') ;
+
+
+
+	$now_id_syndic = 58;
+	
+	$row = sql_fetsel("*", "spip_syndic", "id_syndic=".intval($now_id_syndic));
+
+	// var_dump($row);
+
+	$url_syndic = $row['url_syndic'];
+	$url_site = $row['url_site'];
+
+	if ($row['moderation'] == 'oui')
+		$moderation = 'dispo';	// a valider
+	else
+		$moderation = 'publie';	// en ligne sans validation
+
+	// determiner le statut a poser en cas d'echec : sus par defaut
+	// off si le site est deja off, ou sus depuis trop longtemps
+	$statut = 'sus';
+	if (
+		$row['statut']=='off'
+	  OR ($row['statut']=='sus' AND time()-strtotime($row['date_syndic'])>_PERIODE_SYNDICATION_SUSPENDUE*60)
+	  )
+		$statut = 'off';
+
+	// sql_updateq('spip_syndic', array('syndication'=>$statut, 'date_syndic'=>date('Y-m-d H:i:s')), "id_syndic=".intval($now_id_syndic));
+
+	// Aller chercher les donnees du RSS et les analyser
+	include_spip('inc/distant');
+	include_spip('inc/syndic');
+
+	$rss = recuperer_page($url_syndic, true);
+	if (!$rss)
+		$articles = _T('sites:avis_echec_syndication_02');
+	else
+		$articles = analyser_backend($rss, $url_syndic);
+
+
+	// Les enregistrer dans la base
+
+	$faits = array();
+	foreach ($articles as $data) {
+		echo "<hr />" ;
+		//var_dump($data);
+		
+		//inserer_article_syndique ($data, $now_id_syndic, $moderation, $url_site, $url_syndic, $row['resume'], $row['documents'], $faits);
+	}
+
+*/
+
+
+?>

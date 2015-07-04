@@ -1,0 +1,21 @@
+<paquet
+	prefix="podcast"
+	categorie="multimedia"
+	version="1.0"
+	etat="stable"
+	compatibilite="[3.0.0;3.0.*]"
+	logo="prive/themes/spip/images/portfolio-32.png"
+>
+
+	<nom>Podcast</nom>
+	
+	<!-- Gestion des medias dans SPIP -->
+
+	<auteur>Collectif SPIP</auteur>
+	<credit>BoOz</credit>
+
+	<traduire module="Podcast" reference="fr" gestionnaire="salvatore" />
+
+	<pipeline nom="post_syndication" inclure="podcast_pipelines.php" />
+	
+</paquet>
