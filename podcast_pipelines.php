@@ -54,9 +54,8 @@ function radiobot_scan($id_syndic_article, $titre_parent = "Sans titre", $url, $
 
 	}
 
-	$enclosures = array_unique($enclosures);
-
 	if(is_array($enclosures) and sizeof($enclosures) > 0){
+		$enclosures = array_unique($enclosures);
 		if(!$date)
 			$date =  date("Y-m-d h:i:s");
 		inserer_document_syndic_article($enclosures,$id_syndic_article,$date,$titre_parent);
